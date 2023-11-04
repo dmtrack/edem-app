@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './SideBar.module.scss';
 import { useState } from 'react';
-import { ThemeSwitcher } from '@/shared/ui';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 
 export interface SideBarProps {
     className?: string;
