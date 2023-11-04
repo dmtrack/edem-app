@@ -14,9 +14,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     };
     return (
         <div>
-            <IconWrapper>
-                <LangSwitcherIcon onClick={toggle} />{' '}
-            </IconWrapper>
+            <LangSwitcherIcon onClick={toggle} className={className} />{' '}
         </div>
     );
 };
