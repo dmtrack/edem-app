@@ -8,7 +8,6 @@ i18n.use(Backend)
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        ns: ['translation'],
         fallbackLng: 'ru',
         debug: __IS_DEV__,
 
@@ -16,7 +15,7 @@ i18n.use(Backend)
             escapeValue: false,
         },
         backend: {
-            loadPath: 'locales/{{lng}}/{{ns}}.json',
+            loadPath: '/locales/{{lng}}/{{ns}}.json',
         },
     });
 
