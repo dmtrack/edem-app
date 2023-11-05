@@ -8,6 +8,7 @@ i18n.use(Backend)
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
+        ns: ['translation'],
         fallbackLng: 'ru',
         debug: __IS_DEV__,
 
