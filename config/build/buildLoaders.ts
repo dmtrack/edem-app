@@ -45,7 +45,6 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
                 loader: 'file-loader',
                 options: {
                     name: '[folder]/[name].[ext]',
-                    outputpath: 'assets/locales/',
                 },
             },
         ],
