@@ -47,5 +47,7 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
         ],
     };
 
-    return [svgLoader, fileLoader, typescriptLoader, cssLoader];
+    const jsonLoader = { test: /\.json$/, loader: 'json-loader' };
+
+    return [svgLoader, fileLoader, typescriptLoader, cssLoader, jsonLoader];
 };
