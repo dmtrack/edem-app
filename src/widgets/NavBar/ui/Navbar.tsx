@@ -1,13 +1,11 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './Navbar.module.scss';
-import { Applink } from '@/shared/ui';
-import { LangSwitcher, ThemeSwitcher } from '@/widgets';
+import { LangSwitcher } from '@/widgets';
 import logoImage from '../../../shared/assets/images/logo.png';
 import userImage from '../../../shared/assets/images/user.png';
 import { ChatBubbleIcon } from '@/shared/assets/icons/chatBubbleIcon';
 import { RoundNotificationsIcon } from '@/shared/assets/icons/roundNotificationsIcon';
 import { useTranslation } from 'react-i18next';
-import { IconWrapper } from '@/widgets/LangSwitcher/ui/IconWrapper';
 
 export interface NavbarProps {
     className?: string;
