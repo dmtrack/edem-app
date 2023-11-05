@@ -1,0 +1,130 @@
+.Navbar {
+    width: 100%;
+    height: var(--navbar-height);
+    background: var(--inverted-background-color);
+}
+
+.section {
+    align-items: center;
+    height: 40px;
+    margin: 28px auto;
+    width: 62%;
+    display: flex;
+
+    @media (max-width: 1200px) {
+        width: 80%;
+    }
+
+    @media (max-width: 800px) {
+        width: 95%;
+    }
+}
+
+.banner {
+    display: flex;
+    gap: 16px;
+    width: 339px;
+    align-items: center;
+
+    .logo {
+        width: 164px;
+    }
+    .typo {
+        width: 159px;
+        font: var(--font-s);
+        font-weight: 400;
+        color: #0b152475;
+        @media (max-width: 800px) {
+            display: none;
+        }
+    }
+}
+
+.control_panel {
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    height: 32px;
+    width: 253px;
+    gap: 24px;
+
+    .lang {
+        margin-top: 3px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .chat {
+        margin-op: 3px;
+        margin-left: 2px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (max-width: 800px) {
+            display: none;
+        }
+    }
+
+    .notif {
+        position: relative;
+    }
+    .bell {
+        margin-top: 4px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .label {
+        width: 22px;
+        height: 16px;
+        background-color: #ff4e3d;
+        text-align: center;
+        border-radius: 16px;
+        position: absolute;
+        top: -1px;
+        left: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .count {
+        color: white;
+        font: var(--font-s);
+    }
+
+    .chip {
+        display: flex;
+        width: 101px;
+        height: 32px;
+        border-radius: 16px;
+        background-color: #0b15240d;
+        color: var(--secondary-color);
+        gap: 8px;
+        align-items: center;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .image {
+        height: 32px;
+        width: 32px;
+        margin-right: auto;
+    }
+
+    .user {
+        font: var(--font-s);
+        font-weight: 400;
+        color: var(--secondary-color);
+        text-align: center;
+        width: 49px;
+        height: 20px;
+        margin-right: 16px;
+        margin-top: 6px;
+    }
+}

@@ -1,0 +1,35 @@
+@import 'reset.scss';
+@import 'variables/global';
+@import 'themes/dark';
+@import 'themes/normal';
+
+.app {
+    /* font: var(--font-m); */
+    background: var(--background-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content_page {
+    width: 62%;
+    flex-grow: 1;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+        width: 80%;
+    }
+
+    @media (max-width: 800px) {
+        width: 100%;
+    }
+}
+
+.page_wrapper {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 16px;
+}
