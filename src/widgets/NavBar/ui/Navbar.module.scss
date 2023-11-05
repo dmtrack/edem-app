@@ -2,17 +2,22 @@
     width: 100%;
     height: var(--navbar-height);
     background: var(--inverted-background-color);
-    /* display: flex;
-    align-items: center;
-    padding: 20px; */
 }
 
 .section {
     align-items: center;
     height: 40px;
     margin: 28px auto;
-    width: 81.6%;
+    width: 62%;
     display: flex;
+
+    @media (max-width: 1200px) {
+        width: 80%;
+    }
+
+    @media (max-width: 800px) {
+        width: 95%;
+    }
 }
 
 .banner {
@@ -29,6 +34,9 @@
         font: var(--font-s);
         font-weight: 400;
         color: #0b152475;
+        @media (max-width: 800px) {
+            display: none;
+        }
     }
 }
 
@@ -53,6 +61,10 @@
 
         &:hover {
             cursor: pointer;
+        }
+
+        @media (max-width: 800px) {
+            display: none;
         }
     }
 

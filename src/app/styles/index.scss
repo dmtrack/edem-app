@@ -13,12 +13,23 @@
 }
 
 .content_page {
-    width: 81.6%;
+    width: 62%;
     flex-grow: 1;
     margin: 0 auto;
+
+    @media (max-width: 1200px) {
+        width: 80%;
+    }
+
+    @media (max-width: 800px) {
+        width: 100%;
+    }
 }
 
-.page-wrapper {
+.page_wrapper {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
-    padding: 20px;
+    gap: 16px;
 }

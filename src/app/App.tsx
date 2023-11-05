@@ -15,7 +15,6 @@ const App = () => {
             <Suspense fallback=''>
                 <Navbar />
                 <main className='content_page'>
-                    {/* <SideBar /> */}
                     <AppRouter />
                 </main>
                 <Footer />

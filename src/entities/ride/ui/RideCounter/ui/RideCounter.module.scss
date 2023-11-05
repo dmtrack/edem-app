@@ -1,0 +1,13 @@
+.RideCounter {
+    font: var(--font-xl);
+    font-weight: 600;
+    color: var(--secondary-color);
+
+    @media (max-width: 800px) {
+        width: 100%;
+        height: auto;
+        font: var(--font-l);
+        font-weight: 600;
+        text-align: center;
+    }
+}
