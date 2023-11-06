@@ -6,7 +6,7 @@ This is test task for the company
 
 ## Preview
 
-![Preview](public/preview.png)
+![Preview](./src/shared/assets/images/preview.png)
 
 ## Stack
 

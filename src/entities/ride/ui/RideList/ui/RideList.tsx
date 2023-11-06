@@ -14,7 +14,7 @@ export interface RideListProps {
 export const RideList = ({ className }: RideListProps) => {
     const { t } = useTranslation('translation');
     const [pageNum, setPageNum] = useState(1);
-    let limit;
+    let limit = 10;
 
     if (pageNum === 1) {
         limit = 30;

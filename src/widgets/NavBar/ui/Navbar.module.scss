@@ -28,12 +28,19 @@
 
     .logo {
         width: 164px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .typo {
         width: 159px;
         font: var(--font-s);
         font-weight: 400;
         color: #0b152475;
+        &:hover {
+            cursor: pointer;
+        }
+
         @media (max-width: 800px) {
             display: none;
         }
