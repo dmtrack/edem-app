@@ -17,3 +17,12 @@
         text-align: center;
     }
 }
+
+.toast {
+    font: var(--font-m);
+    color: #0b1524;
+
+    @media (max-width: 800px) {
+        font: var(--font-s);
+    }
+}

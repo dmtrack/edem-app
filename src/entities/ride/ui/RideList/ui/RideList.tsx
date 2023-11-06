@@ -1,10 +1,11 @@
-import { RideCounter } from '@/entities/ride';
 import { useRides } from '@/entities/ride/lib/useRides';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { toast, ToastContainer } from 'react-toastify';
 import { RideCard } from '../../RideCard';
 import styles from './RideList.module.scss';
+import 'react-toastify/scss/main.scss';
 
 export interface RideListProps {
     className?: string;
@@ -12,15 +13,15 @@ export interface RideListProps {
 
 export const RideList = ({ className }: RideListProps) => {
     const { t } = useTranslation('translation');
-
     const [pageNum, setPageNum] = useState(1);
+
     const {
         results: data,
         isLoading,
         isError,
         hasNextPage,
     } = useRides(pageNum);
-    console.log(data, 'data');
+
     let intObserver = useRef<IntersectionObserver | null>(null);
 
     const lastPostRef = useCallback(
@@ -38,8 +39,12 @@ export const RideList = ({ className }: RideListProps) => {
         [isLoading, hasNextPage]
     );
 
+    useEffect(() => {
+        if (data.length === 100) toast(`${t('поездок больше не найдено')}`);
+    }, [data.length, lastPostRef]);
+
     const content = data.map((ride, i) => {
-        if (data.length === i + 1 && data.length < 30) {
+        if (data.length === i + 1 && data.length < 100) {
             return <RideCard ref={lastPostRef} key={ride.id} ride={ride} />;
         }
         return <RideCard key={ride.id} ride={ride} />;
@@ -48,7 +53,7 @@ export const RideList = ({ className }: RideListProps) => {
     return (
         <>
             {isError && <p className='center'>Error occured...</p>}
-            {isLoading && <p className='center'>Loading more posts...</p>}
+            {isLoading && <p className='center'>Loading more rides...</p>}
             {
                 <div>
                     <div
@@ -65,6 +70,20 @@ export const RideList = ({ className }: RideListProps) => {
                         ])}>
                         {content}
                     </div>
+
+                    <ToastContainer
+                        position='bottom-right'
+                        autoClose={3000}
+                        hideProgressBar={true}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme='light'
+                        className={styles.toast}
+                    />
                 </div>
             }
         </>

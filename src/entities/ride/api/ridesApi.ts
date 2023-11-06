@@ -8,8 +8,12 @@ export const ridesApi = createApi({
         baseUrl: 'https://jsonplaceholder.typicode.com/',
     }),
     endpoints: (build) => ({
-        getPostsOnPage: build.query<RideListType, string>({
-            query: (page) => `/posts?_page=${page}&_limit=10`,
+        getPostsOnPage: build.query<
+            RideListType,
+            { pageNum: number; limit: number }
+        >({
+            query: ({ pageNum, limit }) =>
+                `/posts?_page=${pageNum}&_limit=${limit}`,
         }),
         getAllPosts: build.query<RideListType, string>({
             query: () => `/posts`,
