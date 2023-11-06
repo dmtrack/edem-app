@@ -4,7 +4,6 @@
 @import 'themes/normal';
 
 .app {
-    /* font: var(--font-m); */
     background: var(--background-color);
     color: var(--primary-color);
     min-height: 100vh;
@@ -28,6 +27,7 @@
 
 .page_wrapper {
     margin-top: 16px;
+    margin-bottom: 32px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;

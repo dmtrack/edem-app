@@ -1,11 +1,9 @@
-import { RideCounter, RideList } from '@/entities/ride';
-import { useTranslation } from 'react-i18next';
+import { RideList } from '@/entities/ride';
 
 const MainPage = () => {
     return (
         <>
             {' '}
-            <RideCounter />
             <RideList />
         </>
     );

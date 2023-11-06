@@ -5,16 +5,21 @@ import { MapMarker } from '@/shared/assets/icons/mapMarker';
 import { Box } from '@/shared/assets/icons/box';
 import tripImage from '../../../../../shared/assets/images/tripImage.png';
 import { useTranslation } from 'react-i18next';
+import { forwardRef } from 'react';
 
 export interface RideCardProps {
     className?: string;
     ride?: IRide;
 }
 
-export const RideCard = ({ className, ride }: RideCardProps) => {
+export const RideCard = forwardRef<HTMLDivElement, RideCardProps>(function Ride(
+    { className, ride }: RideCardProps,
+    ref
+) {
     const { t } = useTranslation('translation');
-    return (
-        <div className={classNames(styles.RideCard, {}, [className])}>
+
+    const rideBody = (
+        <>
             <div className={styles.container}>
                 <div className={styles.image_section}>
                     <img
@@ -24,7 +29,10 @@ export const RideCard = ({ className, ride }: RideCardProps) => {
                     />
                 </div>{' '}
                 <div className={styles.info_section}>
-                    <div className={styles.heading}>{t('Газель фермер')}</div>
+                    <div className={styles.heading}>
+                        {' '}
+                        {t('Газель фермер')} - {ride.id}
+                    </div>
                     <div className={styles.location_info}>
                         <MapMarker />
                         <div className={styles.location}>
@@ -59,6 +67,18 @@ export const RideCard = ({ className, ride }: RideCardProps) => {
                     )}`}</div>
                 </div>
             </div>
+        </>
+    );
+
+    let content = ref ? (
+        <div ref={ref} className={classNames(styles.RideCard, {}, [className])}>
+            {rideBody}
+        </div>
+    ) : (
+        <div className={classNames(styles.RideCard, {}, [className])}>
+            {rideBody}
         </div>
     );
-};
+
+    return content;
+});
