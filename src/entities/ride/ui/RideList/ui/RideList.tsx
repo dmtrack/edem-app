@@ -30,14 +30,14 @@ export const RideList = ({ className }: RideListProps) => {
     } = useRides(pageNum, limit);
 
     let intObserver = useRef<IntersectionObserver | null>(null);
-
+    console.log(data, 'data');
     const lastPostRef = useCallback(
         (ride) => {
             if (isLoading) return;
             if (intObserver.current) intObserver.current.disconnect();
             intObserver.current = new IntersectionObserver((rides) => {
                 if (rides[0].isIntersecting && hasNextPage) {
-                    console.log('near thee last');
+                    // console.log('near thee last');
                     setPageNum((prev) => prev + 1);
                 }
             });
