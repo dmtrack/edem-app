@@ -13,7 +13,10 @@ This is test task for the company
 -   react
 -   typescript
 -   redux & toolkit
+-   RTK-query
 -   i18n
 -   sass
+-   webpack
+-   feature-sliced design
 
 this is true story...
