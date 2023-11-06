@@ -29,7 +29,10 @@ export const RideCard = forwardRef<HTMLDivElement, RideCardProps>(function Ride(
                     />
                 </div>{' '}
                 <div className={styles.info_section}>
-                    <div className={styles.heading}>{t('Газель фермер')}</div>
+                    <div className={styles.heading}>
+                        {' '}
+                        {t('Газель фермер')} - {ride.id}
+                    </div>
                     <div className={styles.location_info}>
                         <MapMarker />
                         <div className={styles.location}>

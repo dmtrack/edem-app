@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 import { useGetPostsOnPageQuery } from '../api/ridesApi';
 import { RideListType } from '../types/types';
 
-export const useRides = (pageNum: number) => {
-    let limit = 30;
-    if (pageNum >= 2) limit = 10;
+export const useRides = (pageNum: number, limit: number) => {
     const { data, isError, isLoading, error } = useGetPostsOnPageQuery({
         pageNum: pageNum,
         limit: limit,

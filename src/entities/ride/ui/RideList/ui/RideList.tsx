@@ -14,13 +14,20 @@ export interface RideListProps {
 export const RideList = ({ className }: RideListProps) => {
     const { t } = useTranslation('translation');
     const [pageNum, setPageNum] = useState(1);
+    let limit;
 
+    if (pageNum === 1) {
+        limit = 30;
+    } else if (pageNum === 2) {
+        limit = 10;
+        setPageNum(4);
+    }
     const {
         results: data,
         isLoading,
         isError,
         hasNextPage,
-    } = useRides(pageNum);
+    } = useRides(pageNum, limit);
 
     let intObserver = useRef<IntersectionObserver | null>(null);
 
