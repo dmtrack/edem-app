@@ -19,4 +19,3 @@ This is test task for the company
 -   webpack
 -   feature-sliced design
 
-this is true story...
